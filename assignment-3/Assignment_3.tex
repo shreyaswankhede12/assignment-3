@@ -1,0 +1,93 @@
+\documentclass[journal,12pt, two column]{IEEEtran}
+\usepackage{mathtools}
+\usepackage{enumitem}
+\usepackage{graphicx}
+\usepackage{tfrupee}
+\usepackage{amssymb}
+\usepackage{amsmath,amssymb,amsthm}
+\let\vec\mathbf
+\newcommand{\myvec}[1]{\ensuremath{\begin{pmatrix}#1\end{pmatrix}}}
+\providecommand{\brak}[1]{\ensuremath{\left(#1\right)}}
+
+\title{Assignment 3\\ \Large AI1110: Probability and Random Variables \\ \large Indian Institute of Technology Hyderabad}
+\author{Shreyas Wankhede \\ \normalsize AI21BTECH11028 \\ \vspace*{20pt} \\ \Large CBSE Class 9 Statistics}
+
+\begin{document}
+
+\maketitle{\textbf{Example 15:}}\\
+Consider a small unit of a factory where there are 5 employees:a supervisor and four labourers.The labourers draw a salary of \rupee 5,000 per month each while the supervisor \rupee 15,000 per month.Calculate the mean,median and mode of the salaries of this unit of the factory.
+
+\textbf{Solution:}
+For labourers have salary of \rupee5000 and supervisor has salary of \rupee15000.
+
+\begin{enumerate}[label=(\roman*)]
+
+\item
+Mean
+\begin{table}[!ht]
+            \centering
+            \resizebox{\columnwidth}{!}
+            {
+                \begin{tabular}{|c| c| }
+                \hline
+                 Salary($x_{i}$) & frequency($f_{i}$) \\
+                 \hline
+                 $5000$   & $4$ \\
+                 $15000$   & $1$ \\
+                 \hline
+                    \textbf{Total} & $\sum_{i=1}^{2} f_{i} = 5$ \\
+                 \hline
+                \end{tabular}
+            }
+            \caption{}
+            \label{table:table1}
+       \end{table}
+       
+Let, \vec{X} be the column vector of salary ($x_{i}$), \vec{F} be the column vector of frequency ($f_{i}$), \vec{K} be the column matrix of 1's with 2 rows and \vec{m} be the mean\\
+The formula for finding mean is:
+\begin{equation}
+ \label{eq:formulae}
+ \vec{m} =\dfrac{\vec{X^{\top}}\vec{F}}{\vec{K^{\top}}\vec{F}} 
+\end{equation}
+Also,
+\begin{align}
+ \label{eq:formulae2}
+	      	\vec{X}&=\myvec{5000,15000}   \\
+	     \label{eq:formulae3}
+	      	\vec{F}&=\myvec{4,1}    \\
+	     \label{eq:formulae4}
+      		\vec{K}&=\myvec{1,1}   
+\end{align}
+Putting the values of \eqref{eq:formulae2}, \eqref{eq:formulae3}, \eqref{eq:formulae4} in \eqref{eq:formulae},
+\begin{align}
+ \vec{m} = 7000
+\end{align}
+ $\therefore$ the mean of salaries is \rupee$7000$
+
+
+\item
+Median\\
+To find median, we have to arrange the salaries in ascending order \\
+$\implies 5000, 5000, 5000, 5000, 15000$ \\
+ \textbf{Key Concept}: 
+\begin{enumerate}
+\item For a sorted data if number of observations($N$) is odd, then median of the data will be $\brak{\frac{N + 1}{2}}^{th}$ observation.
+\item If the number of observations($N$) is even, then median will be the mean of $\brak{\frac{N}{2}}^{th}$ and $\brak{\frac{N+2}{2}}^{th}$ observations.
+\end{enumerate}
+As there are odd number of salaries(5),\\
+Median = $\dfrac{5+1}{2}^{th}$ element = $3^{rd}$ element
+\begin{align}
+\implies median = 5000\nonumber
+\end{align}
+$\therefore$ the median of salaries is \rupee$5000$.
+
+\item
+Mode\\
+In the data of salaries ,we can see that the salary data element $5000$ occurs maximum number of times (frequency = 4).
+\begin{align}
+  \implies mode=5000\nonumber
+\end{align}
+$\therefore$ the mode of salaries is \rupee$5000$.
+
+\end{enumerate}
+\end{document}
